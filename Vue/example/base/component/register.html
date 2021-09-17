@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>组件</title>
+  </head>
+  <body>
+    <div id="list-rendering">
+      <ol>
+        <todo-item
+          v-for="item in todos"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+        <!-- <li v-for="todo of todos">{{todo.text}}</li> -->
+      </ol>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const ListRendering = {
+      data() {
+        return {
+          todos: [
+            { text: "Learn JavaScript", id: 1 },
+            { text: "Learn Vue", id: 2 },
+            { text: "Build something awesome", id: 3 },
+            { text: "Add Other", id: 4 },
+          ],
+        };
+      },
+    };
+
+    const app = Vue.createApp(ListRendering);
+
+    app.component("todo-item", {
+      props: ["todo"],
+      template: `<li>{{ todo.text }}</li>`,
+    });
+
+    app.mount("#list-rendering");
+  </script>
+</html>

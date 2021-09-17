@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>双向绑定</title>
+  </head>
+  <body>
+    <div id="two-way-binding">
+      <p>{{ message }}</p>
+      <input v-model="message" />
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const TwoWayBinding = {
+      data() {
+        return {
+          message: "Hello World",
+        };
+      },
+    };
+    Vue.createApp(TwoWayBinding).mount("#two-way-binding");
+  </script>
+</html>

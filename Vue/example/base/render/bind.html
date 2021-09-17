@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>绑定属性</title>
+  </head>
+  <body>
+    <div id="bind-attribute">
+      <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！</span
+      >
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const Bind = {
+      data() {
+        return {
+          message: "You load this page on" + new Date().toLocaleString(),
+        };
+      },
+    };
+    Vue.createApp(Bind).mount("#bind-attribute");
+  </script>
+</html>
