@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape布局</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        height: 30vh;
+        background-color: pink;
+      }
+      .left {
+        width: 50%;
+      }
+      .shape {
+        float: left;
+        display: block;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        margin: 10px;
+        border: 10px solid;
+        border-radius: 50%;
+        background-color: currentColor;
+        background-clip: content-box;
+        color: #cd0000;
+        shape-outside: none;
+      }
+      .right {
+        width: 50%;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <span class="shape"></span>
+        <span>
+          内容Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+          ullam architecto deserunt eos consectetur saepe veritatis
+          necessitatibus animi, a placeat accusamus ducimus natus beatae modi
+          aliquam quisquam sed perspiciatis dolor laudantium, illum labore. Nam
+          architecto culpa omnis numquam. Veniam, cum enim possimus, praesentium
+          vero voluptatibus impedit ipsa vel itaque mollitia pariatur delectus
+          aliquam neque doloribus sequi ratione illum, accusantium molestiae
+          rerum. Tenetur culpa repudiandae consequuntur, voluptas minima,
+          nesciunt ab optio vero magnam aut officiis architecto ut vitae illo
+          facilis. Exercitationem ducimus animi sequi ratione. Voluptate
+          perferendis corporis modi, facere, eaque tempore blanditiis
+          praesentium corrupti veniam possimus accusamus a, minus soluta.
+        </span>
+      </div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>
