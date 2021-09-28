@@ -1,6 +1,8 @@
+# React 源码
+
 ## React 核心代码入口
 
-```
+```js
 export {
 Children,
 createMutableSource,
@@ -54,13 +56,13 @@ act,
 
 按其顺序介绍:
 
-
 ### Chilren
 
 对应 React.Chilren, 详情 Chilren.md
 
 其结构如下:
-```
+
+```js
 const Children = {
   map,
   forEach,
@@ -68,4 +70,63 @@ const Children = {
   toArray,
   only,
 };
+```
+
+### ReactElement
+
+详情 ReactElement.md
+
+导出有:
+
+```js
+import {
+  createElement as createElementProd,
+  createFactory as createFactoryProd,
+  cloneElement as cloneElementProd,
+  isValidElement,
+} from "./ReactElement";
+
+// 开发版
+import {
+  createElementWithValidation,
+  createFactoryWithValidation,
+  cloneElementWithValidation,
+} from "./ReactElementValidator";
+
+const createElement = __DEV__ ? createElementWithValidation : createElementProd;
+const cloneElement = __DEV__ ? cloneElementWithValidation : cloneElementProd;
+const createFactory = __DEV__ ? createFactoryWithValidation : createFactoryProd;
+
+export { createElement, cloneElement, createFactory, isValidElement };
+```
+
+### ReactMutableSource
+
+详情, ReactMutableSource.md, 不重要, 用于创建可变的 React 源
+
+```js
+import { createMutableSource } from "./ReactMutableSource";
+export { createMutableSource };
+```
+
+### ReactCreateRef
+
+详情 ReactCreateRef.md
+
+其只有一个函数, createRef, 用于创建 ref 对象.
+
+```js
+import { createRef } from "./ReactCreateRef";
+export { createRef };
+```
+
+### ReactBaseClasses
+
+抛出两个函数, Component 和 PureComponent, 用于创建类组件.
+详情: ReactBaseClasses.md
+
+```js
+import { Component, PureComponent } from "./ReactBaseClasses";
+
+export { Component, PureComponent };
 ```
