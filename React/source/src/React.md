@@ -130,3 +130,11 @@ import { Component, PureComponent } from "./ReactBaseClasses";
 
 export { Component, PureComponent };
 ```
+
+### ReactContext
+
+```js
+import { createContext } from "./ReactContext";
+
+export { createContext };
+```
