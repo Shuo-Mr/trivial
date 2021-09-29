@@ -151,3 +151,20 @@ React.forwardRef 会创建一个 React 组件，这个组件能够将其接受�
 import { forwardRef } from "./ReactForwardRef";
 export { forwardRef };
 ```
+
+### ReactLazy
+
+ReactLazy, 抛出一个函数 lazy, React.lazy 函数能让你像渲染常规组件一样处理动态引入（的组件）。暂不支持服务端渲染.常与 Suspense 连用.
+
+详情 ReactLazy.md
+
+```js
+import { lazy } from "./ReactLazy";
+export { lazy };
+```
+
+### ReactMemo
+
+抛出一个函数 memo, React.memo 为高阶组件。用于通过记忆组件渲染结果的方式来提高组件的性能表现.
+
+详情: ReactMemo.md
