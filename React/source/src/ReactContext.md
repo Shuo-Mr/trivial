@@ -7,7 +7,8 @@
 ```js
 import { REACT_PROVIDER_TYPE, REACT_CONTEXT_TYPE } from "shared/ReactSymbols";
 
-// 传入一个默认值, 返回一个context
+// 传入一个默认值,只有当组件所处的树中没有匹配到 Provider 时，其 defaultValue 参数才会生效。
+// 返回一个context
 export function createContext(defaultValue) {
   const context = {
     $$typeof: REACT_CONTEXT_TYPE,
